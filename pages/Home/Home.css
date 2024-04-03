@@ -1,0 +1,25 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 90svh;
+  background-color: var(--color-2);
+  color: var(--color-5);
+  overflow-y: auto;
+  padding-top: var(--margin-l);
+  font-family: "Ubuntu", sans-serif;
+}
+.home > h1 {
+  font-size: 3em;
+  display: flex;
+  text-align: center;
+  padding: var(--padding-m);
+}
+
+.home > p {
+  font-size: 1.3em;
+  padding: var(--padding-m) 15%;
+  text-align: center;
+}

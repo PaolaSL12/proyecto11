@@ -1,0 +1,228 @@
+.chararacterById {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 90svh;
+  background-color: var(--color-2);
+  color: var(--color-5);
+  overflow-y: auto;
+  padding: var(--margin-l);
+}
+
+.characterFile {
+  width: 850px;
+  height: 500px;
+  font-family: "Special Elite", system-ui;
+  background-color: #eff1d5;
+  background-image: url("https://www.transparenttextures.com/patterns/lined-paper-2.png");
+  outline: 3px solid var(--color-5);
+}
+
+.FileImg {
+  width: 250px;
+  height: 250px;
+}
+
+.FileImg > img {
+  width: 100%;
+  object-fit: contain;
+  outline: 2px solid var(--color-5);
+}
+
+.fileDetails {
+    width: 600px;
+  font-size: 1.6em;
+  justify-content: center;
+  padding-left: var(--padding-l);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  line-height: 2;
+  position: relative;
+}
+
+.id {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.fileTop {
+  display: flex;
+}
+
+.fileBottom {
+  height: 240px;
+  font-size: 1.6em;
+  padding: var(--padding-m);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  line-height: 2;
+  position: relative;
+}
+
+.fileBottom > img {
+ width: 600px ;
+ position: absolute;
+ bottom: 15px;
+ right: 60px;
+}
+
+@media screen and (max-width: 950px) {
+  .characterFile {
+    width: 650px;
+    height: 400px;
+  }
+  
+  .FileImg {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .fileDetails {
+    width: 450px;
+    font-size: 1.3em;
+    line-height: 1.8;
+  }
+  
+  
+  .fileBottom {
+    height: 180px;
+    font-size: 1.3em;
+  }
+  
+  .fileBottom > img {
+   width: 450px ;
+   position: absolute;
+   bottom: 15px;
+   right: 50px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .characterFile {
+    width: 430px;
+    height: 370px;
+  }
+  
+  .FileImg {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .fileDetails {
+    width: 270px;
+    font-size: 1em;
+  }
+  
+  
+  .fileBottom {
+    height: 180px;
+    font-size: 1em;
+  }
+  
+  .fileBottom > img {
+   width: 350px ;
+   position: absolute;
+   bottom: 15px;
+   right: 40px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .characterFile {
+    width: 350px;
+    height: 340px;
+  }
+  
+  .FileImg {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .fileDetails {
+    width: 220px;
+    font-size: 0.8em;
+  }
+  
+  
+  .fileBottom {
+    height: 180px;
+    font-size: 0.8em;
+  }
+  
+  .fileBottom > img {
+   width: 300px ;
+   position: absolute;
+   bottom: 15px;
+   right: 30px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .characterFile {
+    width: 330px;
+    height: 340px;
+  }
+  
+  .FileImg {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .fileDetails {
+    width: 200px;
+    font-size: 0.7em;
+    line-height: 1.8;
+    padding: var(--padding-m);
+  }
+  
+  
+  .fileBottom {
+    height: 180px;
+    font-size: 0.8em;
+  }
+  
+  .fileBottom > img {
+   width: 300px ;
+   position: absolute;
+   bottom: 20px;
+   right: 0px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .characterFile {
+    width: 300px;
+    height: 320px;
+  }
+  
+  .FileImg {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .fileDetails {
+    width: 180px;
+    font-size: 0.7em;
+    line-height: 1.8;
+    padding: var(--padding-s);
+  }
+  
+  
+  .fileBottom {
+    height: 180px;
+    font-size: 0.7em;
+  }
+  
+  .fileBottom > img {
+   width: 300px ;
+   position: absolute;
+   bottom: 20px;
+   right: 0px;
+  }
+}

@@ -1,0 +1,55 @@
+.episodes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 90svh;
+    background-color: var(--color-2);
+    color: var(--color-5);
+    overflow-y: auto;
+    padding: var(--margin-l);
+    gap: var(--gap-xl);
+}
+
+.episode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 256px;
+    width: 256px;
+    color: var(--color-5);
+    border-radius: var(--br-s);
+    background-image: url('/assets/folder.png');
+    object-fit: contain;
+    font-family: "Special Elite", system-ui;
+    font-size: 1em;
+    line-height: 1.3;
+    padding: var(--padding-m);
+    padding-top: var(--padding-xl);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.episode:hover {
+    transform: scale(1.1);
+}
+
+.hidden-image {
+    display: none;
+  }
+  
+.visible {
+    position: absolute;
+    width: 240px;
+    display: block;
+}
+
+
+@media screen and (max-width: 350px) {
+    .episodes {
+        padding: var(--margin-s);
+        gap: var(--gap-m);
+    }
+  }
