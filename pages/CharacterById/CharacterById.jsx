@@ -16,7 +16,7 @@ const CharacterById = () => {
   }, []);
 
   return (
-    <div className="chararacterById">
+    <main className="chararacterById">
       {character && (
         <>
           <div className="characterFile">
@@ -35,7 +35,7 @@ const CharacterById = () => {
           </div>
         </>
       )}
-    </div>
+    </main>
   );
 };
 

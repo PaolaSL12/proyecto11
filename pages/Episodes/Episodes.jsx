@@ -2,16 +2,14 @@ import { useEffect, useState } from "react";
 import "./Episodes.css";
 import Pagination from "../../components/pagination/pagination";
 import ImgClasified from "../../components/ImgClasified/ImgClasified";
+import { toggleImage } from "../../utils/toggleImage";
+import EpisodeData from "../../components/EpisodeData/EpisodeData";
 
 const Episodes = () => {
   const [episodes, setEpisodes] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [visibleEpisodeId, setVisibleEpisodeId] = useState(null);
-
-  const toggleImage = (episodeId) => {
-    setVisibleEpisodeId(visibleEpisodeId === episodeId ? null : episodeId);
-  };
 
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/episode?page=${page}`, {})
@@ -26,26 +24,25 @@ const Episodes = () => {
   }, [page]);
 
   return (
-    <div className="episodes">
+    <main className="episodes">
       {episodes.map((episode) => (
         <div
           className="episode"
           key={episode.id}
-          onClick={() => toggleImage(episode.id)}
+          onClick={() =>
+            toggleImage(episode.id, visibleEpisodeId, setVisibleEpisodeId)
+          }
         >
           <ImgClasified
             className={
               visibleEpisodeId === episode.id ? "visible" : "hidden-image"
             }
           />
-          <p>episode: {episode.episode}</p>
-          <p>name: {episode.name}</p>
-          <p>air date: {episode.air_date}</p>
-          <p>id: 00{episode.id}</p>
+          <EpisodeData episode={episode} />
         </div>
       ))}
       <Pagination page={page} setPage={setPage} totalPages={totalPages} />
-    </div>
+    </main>
   );
 };
 

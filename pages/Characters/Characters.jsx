@@ -24,7 +24,7 @@ const Characters = () => {
   }, [page]);
 
   return (
-    <div className="characters">
+    <main className="characters">
       {characters.map((character) => (
         <Link to={`/character/${character.id}`} key={character.id}>
         <div className="character">
@@ -39,7 +39,7 @@ const Characters = () => {
         </Link>
       ))}
       <Pagination page={page} setPage={setPage} totalPages={totalPages}/>
-    </div>
+    </main>
   );
 };
 
