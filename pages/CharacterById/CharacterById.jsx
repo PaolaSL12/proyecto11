@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./CharacterById.css";
 import { useParams } from "react-router-dom";
+import ImgClasified from "../../components/ImgClasified/ImgClasified";
 
 const CharacterById = () => {
   const [character, setCharacter] = useState();
@@ -32,10 +33,7 @@ const CharacterById = () => {
             </div>
             <div className="fileBottom">
             <p>seen in {character.episode.length} episodes</p>
-            <img
-              src="https://www.pngall.com/wp-content/uploads/2016/06/Classified-Stamp-Transparent.png"
-              alt="clasified"
-            />
+            <ImgClasified/>
             </div>
           </div>
         </>

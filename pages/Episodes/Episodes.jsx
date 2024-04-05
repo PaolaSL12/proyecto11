@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Episodes.css";
+import Pagination from "../../components/pagination/pagination";
+import ImgClasified from "../../components/ImgClasified/ImgClasified";
 
 const Episodes = () => {
   const [episodes, setEpisodes] = useState([]);
@@ -19,7 +21,7 @@ const Episodes = () => {
         setTotalPages(data.info.pages);
       })
       .catch((error) => {
-        console.error("Error fetching episodes:", error);
+        console.error("Error fetch:", error);
       });
   }, [page]);
 
@@ -31,9 +33,7 @@ const Episodes = () => {
           key={episode.id}
           onClick={() => toggleImage(episode.id)}
         >
-          <img
-            src="https://www.pngall.com/wp-content/uploads/2016/06/Classified-Stamp-Transparent.png"
-            alt="clasified"
+          <ImgClasified
             className={
               visibleEpisodeId === episode.id ? "visible" : "hidden-image"
             }
@@ -44,25 +44,7 @@ const Episodes = () => {
           <p>id: 00{episode.id}</p>
         </div>
       ))}
-      <div className="pagination">
-        <img
-          src="/assets/back.png"
-          alt="back"
-          onClick={() => {
-            setPage(page === 1 ? 1 : page - 1);
-          }}
-          disabled={page === 1}
-        />
-        <p>{page}</p>
-        <img
-          src="/assets/next.png"
-          alt="next"
-          onClick={() => {
-            setPage(page < totalPages ? page + 1 : page);
-          }}
-          disabled={page === totalPages}
-        />
-      </div>
+      <Pagination page={page} setPage={setPage} totalPages={totalPages} />
     </div>
   );
 };
