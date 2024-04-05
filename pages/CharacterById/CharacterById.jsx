@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./CharacterById.css";
 import { useParams } from "react-router-dom";
 import ImgClasified from "../../components/ImgClasified/ImgClasified";
+import ImgCharacter from "../../components/ImgCharacter/ImgCharacter";
+import CharacterData from "../../components/CharacterData/CharacterData";
 
 const CharacterById = () => {
   const [character, setCharacter] = useState();
@@ -20,15 +22,10 @@ const CharacterById = () => {
           <div className="characterFile">
             <div className="fileTop">
               <div className="FileImg">
-                <img src={character.image} alt={character.name} />
+              <ImgCharacter character={character} />
               </div>
               <div className="fileDetails">
-                <p>name: {character.name}</p>
-                <p>status: {character.status}</p>
-                <p>species: {character.species}</p>
-                <p>gender: {character.gender}</p>
-                <p>location: {character.location.name}</p>
-                <p className="id">id: 00{character.id}</p>
+              <CharacterData character={character} id="id" mostrarLocation />
               </div>
             </div>
             <div className="fileBottom">

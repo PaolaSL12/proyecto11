@@ -3,6 +3,8 @@ import "./Characters.css";
 import { Link } from "react-router-dom";
 import Pagination from "../../components/pagination/pagination";
 import ImgClasified from "../../components/ImgClasified/ImgClasified";
+import ImgCharacter from "../../components/ImgCharacter/ImgCharacter";
+import CharacterData from "../../components/CharacterData/CharacterData";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
@@ -27,14 +29,10 @@ const Characters = () => {
         <Link to={`/character/${character.id}`} key={character.id}>
         <div className="character">
           <div className="characterImg">
-            <img src={character.image} alt={character.name} />
+            <ImgCharacter character={character} />
           </div>
           <div className="characterContent">
-            <p>name: {character.name}</p>
-            <p className="secret">status: {character.status}</p>
-            <p className="secret">species: {character.species}</p>
-            <p className="secret">gender: {character.gender}</p>
-            <p className="secret">id: 00{character.id}</p>
+            <CharacterData character={character} className="secret" />
             <ImgClasified/>
           </div>
         </div>

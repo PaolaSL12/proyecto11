@@ -43,7 +43,7 @@
   position: relative;
 }
 
-.id {
+#id {
     position: absolute;
     right: 5px;
     top: 5px;
